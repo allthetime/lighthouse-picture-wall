@@ -22,6 +22,8 @@ body {
   font-family: Futura;
   color:white;
   background:rgb(20,20,20);
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1{
@@ -42,7 +44,7 @@ h3{
 #team-members {
 
   display: inline-block;
-  position: relative;
+  width:calc(100% - 120px);
 
   &:hover > .member{
     -webkit-filter: blur(2px);
@@ -61,29 +63,32 @@ h3{
     width: 200px;
     display: inline-block;
     font-size:0.9em;
+    font-family: "Comic Sans MS";
     -webkit-transition:0.7s;
 
 
     &:hover{
       transform: scale(1.15);
       -webkit-transition:0.15s;
+      -webkit-transition-delay:0.2s;
+
     }
 
 
     &:hover > .name{
       transform: rotateZ(0deg);
       -webkit-transition:0.15s;
+      -webkit-transition-delay:0.2s;
+
     }    
 
     .name{
       -webkit-transition:1s;
+      background: rgba(100,100,100,0.5);
+      border-radius: 20px;
     }
 
-    img {
-      width: 200px;
-      height: 200px;
-      border:5px solid #000;
-    }
+
   }
 
     div:nth-child(odd) > div {
@@ -121,6 +126,47 @@ h3{
 //     -webkit-animation-delay: 0.03s * ($i - 1); 
 //   }
 // }
+
+#biography{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding:50px;
+  @include all(box-sizing,border-box);
+  //position:fixed;
+  //display:none;
+  background:rgba(25,25,25,0.9);
+  // border:5px solid white;
+  transform:translate(-150%, -50%) scale(1);
+  overflow:scroll;
+  transition:0.3s;
+  height:100%;
+  width:100%;
+  font-size:1em;
+  font-family:"Comic Sans MS";
+
+  h2{
+    font-family: Futura;
+  }
+
+  img{
+    border:5px solid white;
+    border-radius: 200px;
+  }
+
+}
+
+
+  .on{
+    // display:block !important;
+    transform:translate(-50%, -50%) scale(1) !important;
+    transition:0.6s;
+  }
+
+  // .covered{
+  //   opacity:0.2;
+  // }
+
 
 
 
