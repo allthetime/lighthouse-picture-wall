@@ -1,0 +1,141 @@
+// ensuite css generator
+//
+//
+//
+//
+@mixin all($type,$value) {
+  -webkit-#{$type}: $value;
+     -moz-#{$type}: $value;
+      -ms-#{$type}: $value;
+          #{$type}: $value;
+}
+
+
+.box { @include all(border-radius,10px); }
+
+body {
+  font-family: Verdana;
+  font-size: 1.5em;
+  padding:-5px;
+  margin:-5px;
+  text-align: center;
+  font-family: Futura;
+  color:white;
+  background:rgb(20,20,20);
+}
+
+h1{
+  letter-spacing: -8px;
+  margin-top:50px;
+  background: rgb(40,40,40);
+  box-shadow: 0 5px 100px rgb(60,60,60);
+    text-shadow: 2px 2px 2px red;
+
+}
+
+h3{
+  letter-spacing: 12px;
+  margin-top:-50px;
+  margin-bottom: 40px;
+}
+
+#team-members {
+
+  display: inline-block;
+  position: relative;
+
+  &:hover > .member{
+    -webkit-filter: blur(2px);
+  }
+
+  &:hover > .member:hover {
+    -webkit-filter: blur(0px);  
+  }
+
+
+  .member {
+    /*border: 1px solid gray;*/
+    margin: 10px;
+    padding: 6px;
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    font-size:0.9em;
+    -webkit-transition:0.7s;
+
+
+    &:hover{
+      transform: scale(1.15);
+      -webkit-transition:0.15s;
+    }
+
+
+    &:hover > .name{
+      transform: rotateZ(0deg);
+      -webkit-transition:0.15s;
+    }    
+
+    .name{
+      -webkit-transition:1s;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border:5px solid #000;
+    }
+  }
+
+    div:nth-child(odd) > div {
+      text-align: center; 
+      transform: rotateZ(6deg);
+      -webkit-animation: wiggle1 0.5s;
+    }
+
+    div:nth-child(even) > div {
+      text-align: center; 
+      transform: rotateZ(-6deg);
+      -webkit-animation: wiggle2 0.5s;      
+    }
+
+    @for $i from 1 through 23 { 
+        div:nth-child(#{$i}) > div {
+        -webkit-animation-delay: 0.03s * ($i - 1); 
+      } 
+    }    
+
+}
+
+// #team-members > div:nth-child(odd) > div{
+//   -webkit-animation: wiggle1 0.5s;
+// }
+// #team-members > div:nth-child(even) > div{
+//   -webkit-animation: wiggle2 0.5s;
+// }
+
+
+
+
+// @for $i from 1 through 23 { 
+//   #team-members > div:nth-child(#{$i}) > div {
+//     -webkit-animation-delay: 0.03s * ($i - 1); 
+//   }
+// }
+
+
+
+@mixin wiggle($index,$degrees){
+  @-webkit-keyframes wiggle#{$index} {
+  0%{transform: rotateZ(#{$degrees}deg)}
+  100%{transform: rotateZ(720deg + $degrees)}
+  }
+}
+@include wiggle(1,6);
+@include wiggle(2,-6);
+
+
+@for $i from 1 through length(listFiles('images/*')) {
+    $c: nth(listFiles('images/*'), $i);
+    .member:nth-child(#{$i}){
+      background:url("../#{$c}")}
+}

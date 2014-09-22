@@ -1,24 +1,191 @@
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+
 body {
   font-family: Verdana;
   font-size: 1.5em;
-}
+  padding: -5px;
+  margin: -5px;
+  text-align: center;
+  font-family: Futura;
+  color: white;
+  background: #141414; }
+
+h1 {
+  letter-spacing: -8px;
+  margin-top: 50px;
+  background: #282828;
+  box-shadow: 0 5px 100px #3c3c3c;
+  text-shadow: 2px 2px 2px red; }
+
+h3 {
+  letter-spacing: 12px;
+  margin-top: -50px;
+  margin-bottom: 40px; }
 
 #team-members {
-  clear: both;
-}
+  display: inline-block;
+  position: relative; }
+  #team-members:hover > .member {
+    -webkit-filter: blur(2px); }
+  #team-members:hover > .member:hover {
+    -webkit-filter: blur(0px); }
+  #team-members .member {
+    /*border: 1px solid gray;*/
+    margin: 10px;
+    padding: 6px;
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    font-size: 0.9em;
+    -webkit-transition: 0.7s; }
+    #team-members .member:hover {
+      transform: scale(1.15);
+      -webkit-transition: 0.15s; }
+    #team-members .member:hover > .name {
+      transform: rotateZ(0deg);
+      -webkit-transition: 0.15s; }
+    #team-members .member .name {
+      -webkit-transition: 1s; }
+    #team-members .member img {
+      width: 200px;
+      height: 200px;
+      border: 5px solid #000; }
+  #team-members div:nth-child(odd) > div {
+    text-align: center;
+    transform: rotateZ(6deg);
+    -webkit-animation: wiggle1 0.5s; }
+  #team-members div:nth-child(even) > div {
+    text-align: center;
+    transform: rotateZ(-6deg);
+    -webkit-animation: wiggle2 0.5s; }
+  #team-members div:nth-child(1) > div {
+    -webkit-animation-delay: 0s; }
+  #team-members div:nth-child(2) > div {
+    -webkit-animation-delay: 0.03s; }
+  #team-members div:nth-child(3) > div {
+    -webkit-animation-delay: 0.06s; }
+  #team-members div:nth-child(4) > div {
+    -webkit-animation-delay: 0.09s; }
+  #team-members div:nth-child(5) > div {
+    -webkit-animation-delay: 0.12s; }
+  #team-members div:nth-child(6) > div {
+    -webkit-animation-delay: 0.15s; }
+  #team-members div:nth-child(7) > div {
+    -webkit-animation-delay: 0.18s; }
+  #team-members div:nth-child(8) > div {
+    -webkit-animation-delay: 0.21s; }
+  #team-members div:nth-child(9) > div {
+    -webkit-animation-delay: 0.24s; }
+  #team-members div:nth-child(10) > div {
+    -webkit-animation-delay: 0.27s; }
+  #team-members div:nth-child(11) > div {
+    -webkit-animation-delay: 0.3s; }
+  #team-members div:nth-child(12) > div {
+    -webkit-animation-delay: 0.33s; }
+  #team-members div:nth-child(13) > div {
+    -webkit-animation-delay: 0.36s; }
+  #team-members div:nth-child(14) > div {
+    -webkit-animation-delay: 0.39s; }
+  #team-members div:nth-child(15) > div {
+    -webkit-animation-delay: 0.42s; }
+  #team-members div:nth-child(16) > div {
+    -webkit-animation-delay: 0.45s; }
+  #team-members div:nth-child(17) > div {
+    -webkit-animation-delay: 0.48s; }
+  #team-members div:nth-child(18) > div {
+    -webkit-animation-delay: 0.51s; }
+  #team-members div:nth-child(19) > div {
+    -webkit-animation-delay: 0.54s; }
+  #team-members div:nth-child(20) > div {
+    -webkit-animation-delay: 0.57s; }
+  #team-members div:nth-child(21) > div {
+    -webkit-animation-delay: 0.6s; }
+  #team-members div:nth-child(22) > div {
+    -webkit-animation-delay: 0.63s; }
+  #team-members div:nth-child(23) > div {
+    -webkit-animation-delay: 0.66s; }
 
-#team-members .member {
-  float: left;
-  /*border: 1px solid gray;*/
-  margin: 10px;
-  padding: 6px;
-}
+@-webkit-keyframes wiggle1 {
+  0% {
+    transform: rotateZ(6deg); }
+  100% {
+    transform: rotateZ(726deg); } }
+@-webkit-keyframes wiggle2 {
+  0% {
+    transform: rotateZ(-6deg); }
+  100% {
+    transform: rotateZ(714deg); } }
+.member:nth-child(1) {
+  background: url("../images/Andrew_Wheeler.jpg"); }
 
-#team-members .member img {
-  width: 200px;
-  height: 200px;
-}
+.member:nth-child(2) {
+  background: url("../images/Benjamin_Visser.jpg"); }
 
-#team-members .member div.name {
-  text-align: center;  
-}
+.member:nth-child(3) {
+  background: url("../images/Brandon_Lee.jpg"); }
+
+.member:nth-child(4) {
+  background: url("../images/Brendan_Deere.jpg"); }
+
+.member:nth-child(5) {
+  background: url("../images/Christopher_Chan.jpg"); }
+
+.member:nth-child(6) {
+  background: url("../images/Daniel_Harris.jpg"); }
+
+.member:nth-child(7) {
+  background: url("../images/Derek_Hendricks.jpg"); }
+
+.member:nth-child(8) {
+  background: url("../images/Eric_Leong.jpg"); }
+
+.member:nth-child(9) {
+  background: url("../images/Eric_Yee.jpg"); }
+
+.member:nth-child(10) {
+  background: url("../images/Kieran_Cormack.jpg"); }
+
+.member:nth-child(11) {
+  background: url("../images/Kinnan_Kwok.jpg"); }
+
+.member:nth-child(12) {
+  background: url("../images/Kristine_Chalk.jpg"); }
+
+.member:nth-child(13) {
+  background: url("../images/Lucy_Ly.jpg"); }
+
+.member:nth-child(14) {
+  background: url("../images/Marlon_Kenny.jpg"); }
+
+.member:nth-child(15) {
+  background: url("../images/Marly_Guha.jpg"); }
+
+.member:nth-child(16) {
+  background: url("../images/Melody_Ma.jpg"); }
+
+.member:nth-child(17) {
+  background: url("../images/Mike_Kakebeeke.jpg"); }
+
+.member:nth-child(18) {
+  background: url("../images/Mike_Legrice.jpg"); }
+
+.member:nth-child(19) {
+  background: url("../images/Shannon_McDonald.jpg"); }
+
+.member:nth-child(20) {
+  background: url("../images/Thiago_Noguerra.jpg"); }
+
+.member:nth-child(21) {
+  background: url("../images/Tom_McGuirk.jpg"); }
+
+.member:nth-child(22) {
+  background: url("../images/Veronika_Bitkina.jpg"); }
+
+.member:nth-child(23) {
+  background: url("../images/Zach_Hill.jpg"); }
+
+/*# sourceMappingURL=style.css.map */

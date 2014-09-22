@@ -6,55 +6,115 @@
 </head>
 <body>
 
-  <h1>HTML Exercise</h1>
-  
+
+  <h1>LIGHTHOUSE</h1>
+  <h3>september</h3>
+
   <div id="team-members">
-    <h2>Team Members</h2>
-
-  
-    <div class="member">
-      <img src="images/avatar.png">
-      <div class="name">
-        Person A
-      </div>
-    </div>
-
-    <div class="member">
-      <img src="images/avatar.png">
-      <div class="name">
-        Person B
-      </div>
-    </div>
-
-    <div class="member">
-      <img src="images/avatar.png">
-      <div class="name">
-        Person C
-      </div>
-    </div>
-
-    <div class="member">
-      <img src="images/avatar.png">
-      <div class="name">
-        Person D
-      </div>
-    </div>
-
-    <div class="member">
-      <img src="images/avatar.png">
-      <div class="name">
-        Person E
-      </div>
-    </div>
-
-    <div class="member">
-      <img src="images/avatar.png">
-      <div class="name">
-        Person F
-      </div>
-    </div>
+   
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
+   <div class="member">
+     <div class="name"></div>
+   </div>
 
   </div>
 
+  <div id="biography">
+
+  </div>
+
+<script>
+  
+"use strict";
+
+document.addEventListener('click',function(e){
+  var file = window.getComputedStyle(e.target).getPropertyValue('background-image');
+  console.log(get_name(file));
+},false);
+
+function get_name(str){
+  var reg = new RegExp(/^url\(.+\/(\w+)\_(\w+).jpg\)/);
+  var name = str.replace(reg, "$1 $2");
+  return name;
+};
+
+var members = document.querySelectorAll('.member');
+
+var names = [];
+names.forEach.call(members,function (member,index){
+  var file = window.getComputedStyle(member).getPropertyValue('background-image');
+  member.querySelector('.name').innerText = get_name(file)
+  names.push(get_name(file));
+});
+
+</script>
+
+
 </body>
 </html>
+
