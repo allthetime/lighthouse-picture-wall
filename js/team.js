@@ -1,10 +1,8 @@
-
 "use strict";
 
 var biography_div = document.querySelector('#biography');
 var members = document.querySelectorAll('.member');
 var team = document.querySelector('#team-members');
-console.log(members)
 
 document.addEventListener('click',function(e){
   if (e.target.className == "member" || e.target.className ==  "name") {
